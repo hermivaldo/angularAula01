@@ -1,0 +1,32 @@
+<div class="row">
+
+  <button class="btn btn-primary" (click)="add()">
+    <div class="glyphicon glyphicon-plus"></div>
+  </button>
+
+  <div class="table-responsive">
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let despesa of despesas">
+        <td>{{despesa.id}}</td>
+        <td>{{despesa.nome}}</td>
+        <td>{{despesa.data | amTimeAgo }}</td>
+        <td>{{despesa.tipo}}</td>
+        <td>{{despesa.valor}}</td>
+        <td class="center-text">
+          <button class="btn btn-danger" (click)="delete(despesa.id)">
+            <div class="glyphicon glyphicon-trash"></div>
+          </button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
